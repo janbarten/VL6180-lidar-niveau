@@ -111,7 +111,7 @@ void loop() {
     Serial.println("Range reading overflow");
   }
 
-  switch (regime) {  // definiere van de verschillende regimes
+  switch (regime) {  // definieren van de verschillende regimes
     case 1:
       stand = hoog;
       duur = lang;
@@ -132,24 +132,24 @@ void loop() {
       duur = kort;
   }
 
-  if (uur == uur1 && stand <= meting && vulStatus == 0) {  // controleren of het tijd is om te vullen
-    vulStatus = 1;                                         //
+  if (uur == uur1 && stand <= meting && vulStatus == 0 && natStatus == 0) {  // controleren of het tijd is om te vullen
+    vulStatus = 1;                                         // declaren dat we gaan vullen
   }
 
   if (vulStatus == 1) {
-    //vullen aan
+    //vullen aan                                            // code om het vullen te start
   }
 
-  if (vulStatus == 1 && stand >= meting) {
-    vulStatus = 0;
-    // vullen uit
-    natStatus = 1;
-    startMinuut = minuut;
+  if (vulStatus == 1 && stand >= meting) {                  // controleren of het gewenste niveau bereikt is
+    vulStatus = 0;                                          // declareren dat het vullen is gestupt
+    // vullen uit                                           // hier de code om het vullen te stoppen
+    natStatus = 1;                                          // declareren dat de bak vol water zit
+    startMinuut = minuut;                                   // timer starten om de bewateringsduur te kunnen timen
   }
 
-  if (natStatus == 1 && (minuut - startMinuut >= duur)) {
-    // leegloop aan
-    natStatus = 0;
+  if (natStatus == 1 && (minuut - startMinuut >= duur)) {   // controleren of de gewenste "natte" periode is bereikt
+    // leegloop aan                                         // hier de code om de leegloop te starten
+    natStatus = 0;                                          // declareren dat de bak leeg is
   }
 
   delay(20);
