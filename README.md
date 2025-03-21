@@ -1,3 +1,3 @@
-# VL6180-lidar-niveau
+# Lidar-niveau
 
 VL6180
