@@ -10,7 +10,7 @@ RTC_DS3231 rtc;                            //De klok krijgt zijn eigen naam
 De VL6188X metingen veschillen tot wel 5 mm bij een gelijkblijvende afstand. Door een lopend gemiddelde te berekenen
 krijgen we een stabiele meting
 */
-const int numReadings = 30;  // aantal waarover het gemiddelde wordt berekend. Evt hier aanpassen.
+const int numReadings = 30;  // aantal metingen waarover het lopende gemiddelde wordt berekend. Evt hier aanpassen.
 int readings[numReadings];   // the readings from the sensor
 int readIndex = 0;           // the index of the current reading
 int total = 0;               // the running total
