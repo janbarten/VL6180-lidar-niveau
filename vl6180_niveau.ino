@@ -1,4 +1,4 @@
-#include <Wire.h>              //Nodig voor protocol om met de lidar te praten
+#include <Wire.h>              //Nodig voor I2C protocol om met de lidar te praten
 #include "Adafruit_VL6180X.h"  //bevat commando's om de data op te halen
 #include "RTClib.h"            //Nodig voor een real time clock
 
